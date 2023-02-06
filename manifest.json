@@ -1,8 +1,8 @@
 {
   "Actions": [
     {
-      "Icon": "actionIcon",
-      "Name": "Counter Good",
+      "Icon": "", // TODO: Add action icon
+      "Name": "Template", //TODO: Add action Name
       "States": [
         {
           "Name": "Template", //TODO: Add state Name
@@ -20,7 +20,7 @@
   "Author": "Jonas Hochsteger",
   "CodePath": "plugin/plugin.html",
   "PropertyInspectorPath": "pi/pi.html",
-  "Description": "Track the number of times you press a key.",
+  "Description": "Template for Stream Deck Plugins",
   "Name": "Template", //TODO: Change to your plugin name
   "Icon": "", //TODO: Add plugin icon
   "Version": "1.0",
