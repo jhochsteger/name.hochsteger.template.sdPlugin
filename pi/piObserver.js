@@ -1,4 +1,4 @@
-class PiObserver { // Copy this class for each action you have in your plugin
+class PiObserver { // Copy this class for each action you have in your plugin and add the new file to the plugin.html
     update(event, jsonEvent) {
         switch (event) { // Don't forget there is ReceiveEvents
             case "the event you need": // TODO change this to the event you need
