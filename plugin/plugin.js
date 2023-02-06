@@ -1,10 +1,10 @@
 let streamDeckSocketInstance;
 
 function connectElgatoStreamDeckSocket(inPort, inPluginUUID, inRegisterEvent, inInfo) {
-    streamDeckSocketInstance = new StreamDeck(inPort, inPluginUUID, inRegisterEvent, inInfo);
+    streamDeckSocketInstance = new StreamDeckSocket(inPort, inPluginUUID, inRegisterEvent, inInfo);
 }
 
-class StreamDeck {
+class StreamDeckSocket {
     subscribeToEvent(event, callback) {
         if (!this.observers[event]) {
             this.observers[event] = [];
