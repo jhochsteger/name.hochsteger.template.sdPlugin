@@ -1,9 +1,7 @@
-let streamDeckSocketInstance;
-
 function connectElgatoStreamDeckSocket(inPort, inPluginUUID, inRegisterEvent, inInfo) {
-    streamDeckSocketInstance = new StreamDeckSocket(inPort, inPluginUUID, inRegisterEvent, inInfo);
-}
 
+    streamDeckSocketInstance.createWebsocket(inPort, inPluginUUID, inRegisterEvent, inInfo);
+}
 class StreamDeckSocket {
     subscribeToEvent(event, callback) {
         if (!this.observers[event]) {
@@ -26,19 +24,16 @@ class StreamDeckSocket {
         }
     }
 
-    constructor(inPort, inPluginUUID, inRegisterEvent, inInfo) {
+    createWebsocket(inPort, inPluginUUID, inRegisterEvent, inInfo) {
         let that = this; // Just in case it is needed in websocket.onmessage
         this.websocket = new WebSocket("ws://localhost:" + inPort);
-        console.log("Connecting to Stream Deck on port " + inPort);
-        this.observers = {};
         this.websocket.onopen = function () {
-            // WebSocket is connected, register the plugin
             let json = {
                 "event": inRegisterEvent,
                 "uuid": inPluginUUID
             }
 
-            this.websocket.send(JSON.stringify(json));
+            that.websocket.send(JSON.stringify(json));
         }
 
         this.websocket.onmessage = function (evt) {
@@ -48,7 +43,13 @@ class StreamDeckSocket {
         }
     }
 
+    constructor() {
+        this.observers = {};
+    }
+
     sendEvent(json) {
         this.websocket.send(JSON.stringify(json));
     }
 }
+
+let streamDeckSocketInstance = new StreamDeckSocket();

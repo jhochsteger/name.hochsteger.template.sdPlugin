@@ -11,6 +11,6 @@ class PiObserver { // Copy this class for each action you have in your plugin an
     }
 
     constructor() {
-        streamDeckSocketPIInstance.subscribeToEvent("the event you need", this); // TODO change this to the event you need
+        streamDeckSocketInstance.subscribeToEvent("the event you need", this); // TODO change this to the event you need
     }
 }
