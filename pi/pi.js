@@ -31,17 +31,17 @@ class StreamDeckSocketPI {
         this.websocket = new WebSocket("ws://localhost:" + inPort);
         console.log("Connecting to Stream Deck on port " + inPort);
         this.observers = {};
-        websocket.onopen = function () {
+        this.websocket.onopen = function () {
             // WebSocket is connected, register the plugin
             let json = {
                 "event": inRegisterEvent,
                 "uuid": inPropertyInspectorUUID
             }
 
-            websocket.send(JSON.stringify(json));
+            this.websocket.send(JSON.stringify(json));
         }
 
-        websocket.onmessage = function (evt) {
+        this.websocket.onmessage = function (evt) {
             const jsonObj = JSON.parse(evt.data);
             const event = jsonObj["event"];
             that.notifyObservers(event, jsonObj);
