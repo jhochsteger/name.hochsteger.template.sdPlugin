@@ -1,19 +1,19 @@
 {
   "Actions": [
     {
-      "Icon": "", // TODO: Add action icon
-      "Name": "Template", //TODO: Add action Name
+      "Icon": "images/actions/test/action/actionimage",
+      "Name": "Template",
       "States": [
         {
-          "Name": "Template", //TODO: Add state Name
-          "Image": "", //TODO: Add state Background Image
+          "Name": "Template",
+          "Image": "images/actions/test/key/image",
           "TitleAlignment": "middle",
           "FontSize": "16"
         }
       ],
       "SupportedInMultiActions": false,
-      "Tooltip": "How many times did you get pwned today? Keep track with this counter.",
-      "UUID": "name.hochsteger.template.action" //TODO: Change action Name
+      "Tooltip": "Template Action Tooltip",
+      "UUID": "name.hochsteger.template.action"
     }
   ],
   "SDKVersion": 2,
@@ -21,8 +21,10 @@
   "CodePath": "plugin/plugin.html",
   "PropertyInspectorPath": "pi/pi.html",
   "Description": "Template for Stream Deck Plugins",
-  "Name": "Template", //TODO: Change to your plugin name
-  "Icon": "", //TODO: Add plugin icon
+  "Category": "Template",
+  "CategoryIcon": "images/default",
+  "Name": "Template",
+  "Icon": "images/default",
   "Version": "1.0",
   "OS": [
     {
